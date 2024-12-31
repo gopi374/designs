@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karan Mehndi</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #8B0000;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            border-radius: 25px;
+            background-color: #c41c1c;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Form Styles */
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        form input, form select, form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #8B0000;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+        }
+
+        form button:hover {
+            background-color: #5C0000;
+        }
+
+        /* Slide Menu */
+        #slide-menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: transparent;
+            color: rgb(8, 8, 8);
+            overflow-y: auto;
+            transition: left 0.3s;
+            backdrop-filter: blur(20px); /* Apply 2px blur to the area behind the slide menu */
+        }
+
+        #slide-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #slide-menu ul li {
+            padding: 15px 20px;
+        }
+
+        #slide-menu ul li a {
+            padding-top: 10px;
+            color: rgb(7, 6, 6);
+            text-decoration: none;
+        }
+
+        #slide-menu ul li #book-now-button {
+            background-color: #5C0000;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        #slide-menu ul li #book-now-button:hover {
+            background-color: #22819b;
+        }
+
+        #menu-toggle {
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        #menu-toggle.active + #slide-menu {
+            left: 0;
+        }
+
+        /* Gallery Styles */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px; /* Uniform spacing */
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Karan Mehndi Art</h1>
+        <span id="menu-toggle">☰</span>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="#gallery">Gallery</a>
+            <!-- Updated Contact link to point to contact.html -->
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div id="slide-menu">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <!-- Updated Contact link to point to contact.html -->
+            <li><a href="contact.html">Contact</a></li>
+            <li><button id="book-now-button">Book Now</button></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <!-- Gallery Section -->
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <img src="m2.jpg" alt="Tattoo Design 1">
+                <img src="m3.jpg" alt="Tattoo Design 2">
+                <img src="m4.jpg" alt="Tattoo Design 3">
+                <img src="m5.jpg" alt="Tattoo Design 4">
+                <img src="m6.jpg" alt="Tattoo Design 5">
+                <img src="m7.jpg" alt="Tattoo Design 6">
+                <img src="m8.jpg" alt="Tattoo Design 7">
+                <img src="m9.jpg" alt="Tattoo Design 8">
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <h2>Book Your Mehandi Design</h2>
+        <form id="booking-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" placeholder="Enter your address" required>
+
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="quality">Design Quality</label>
+            <select id="quality" name="quality" required>
+                <option value="simple">Simple</option>
+                <option value="bridal">Bridal</option>
+                <option value="cultural">Cultural</option>
+                <option value="traditional">Traditional</option>
+                <option value="modern">Modern</option>
+            </select>
+
+            <button type="submit">Submit Booking</button>
+        </form>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const slideMenu = document.getElementById('slide-menu');
+        let menuOpen = false; // Flag to track the state of the menu
+
+        menuToggle.addEventListener('click', () => {
+            if (!menuOpen) {
+                slideMenu.style.left = "0px"; // Open the menu
+                menuToggle.classList.add('active');
+                menuOpen = true; // Set the menu state to open
+            }
+        });
+
+        // Close the menu when clicking anywhere outside of it
+        document.addEventListener('click', (event) => {
+            if (!slideMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                if (menuOpen) {
+                    slideMenu.style.left = "-250px"; // Close the menu
+                    menuToggle.classList.remove('active');
+                    menuOpen = false; // Set the menu state to closed
+                }
+            }
+        });
+
+        // Prevent click event on the menu from closing it
+        slideMenu.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+
+        const form = document.getElementById('booking-form');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const date = document.getElementById('date').value;
+            const quality = document.getElementById('quality').value;
+
+            alert(`Booking Details:\nName: ${name}\nAddress: ${address}\nPreferred Date: ${date}\nDesign Quality: ${quality}`);
+            form.reset();
+        });
+
+        // Navigate to Booking Form when "Book Now" is clicked
+        const bookNowButton = document.getElementById('book-now-button');
+        bookNowButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: document.querySelector('#booking-form').offsetTop,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
