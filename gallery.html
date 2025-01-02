@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        /* General Styles */
+        body {
+            background: linear-gradient(45deg, #a1cec9);
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-image {
+            width: 100%;
+            max-width: 1400px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .container {
+            background: linear-gradient(100deg, rgb(237, 183, 183), rgb(177, 230, 230));
+            padding: 20px;
+        }
+
+        .container h2 {
+            padding-left: 20px;
+            color: rgb(9, 9, 8);
+            font-family: cursive;
+        }
+
+        /* Gallery Styles */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .gallery-item-inner {
+            position: relative;
+            width: 100%;
+            padding-top: 100%;
+            transform-style: preserve-3d;
+            transform: rotateY(0deg);
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover .gallery-item-inner {
+            transform: rotateY(180deg);
+        }
+
+        .gallery-front,
+        .gallery-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .gallery-front {
+            gap: 0;
+            border: 2px solid black;
+            border-radius: 20px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gallery-back {
+            background: #333;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotateY(180deg);
+            border-radius: 10px;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Karan Mehandi Art.png" alt="Logo" class="header-image">
+    </header>
+
+    <div class="container">
+        <section id="gallery">
+            <h2>Gallery - Collection of Designs</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('mb.jpeg');"></div>
+                        <div class="gallery-back">Bridal Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m1.jpg');"></div>
+                        <div class="gallery-back">Elegant Bridal Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('mback.jpeg');"></div>
+                        <div class="gallery-back">Traditional Back Mehndi</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m2.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m3.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('26.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('27.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('28.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('29.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('30.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('31.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('32.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('33.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('34.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('35.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('36.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('37.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('38.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('39.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('40.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('41.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('42.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('43.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('44.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('45.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('46.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('47.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('48.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('49.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('50.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('51.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('52.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('53.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('54.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('55.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('56.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('57.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('58.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('59.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('60.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('61.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('62.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('64.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('63.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('65.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('67.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m5.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m6.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m7.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m8.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m9.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m10.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m11.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m12.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m13.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m14.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m15.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m16.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m17.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m18.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m19.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m20.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m23.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m22.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('m14.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>                
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('68.jpg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('69.jpeg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('70.jpeg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('71.jpeg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('72.jpeg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('73.jpeg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('74.jpeg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('75.jpeg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('download.jpeg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-inner">
+                        <div class="gallery-front" style="background-image: url('76.jpeg');"></div>
+                        <div class="gallery-back">Modern Mehndi Design</div>
+                    </div>
+                </div>
+
+                <!-- Add more gallery items here -->
+            </div>
+        </section>
+    </div>
+</body>
+</html>
