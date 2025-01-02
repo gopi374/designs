@@ -2,19 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karan Mehndi</title>
     <style>
         /* General Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background: linear-gradient(white, pink);
         }
 
         header {
             background-color: #8B0000;
-            color: white;
+            color: rgb(247, 244, 244);
             padding: 10px 20px;
             display: flex;
             justify-content: space-between;
@@ -22,15 +26,17 @@
         }
 
         header h1 {
+            font-family: cursive;
             margin: 0;
         }
 
         nav {
             display: flex;
-            gap: 15px;
+            gap: 10px;
         }
 
         nav a {
+            font-family: cursive;
             color: white;
             text-decoration: none;
             padding: 5px 10px;
@@ -38,12 +44,27 @@
         }
 
         nav a:hover {
-            border-radius: 25px;
-            background-color: #c41c1c;
+            border-radius: 40px;
+            background-color: #ea4444;
         }
 
         .container {
+            padding-left: 20px;
+        }
+
+        .container h2 {
+            background: linear-gradient(to right, #FF7F50, #FF6347, #fc52340f);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
             padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         /* Form Styles */
@@ -86,14 +107,15 @@
         #slide-menu {
             position: fixed;
             top: 0;
-            left: -250px;
+            left: -100%;
             width: 250px;
             height: 100%;
-            background: transparent;
-            color: rgb(8, 8, 8);
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
             overflow-y: auto;
             transition: left 0.3s ease-in-out;
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(10px);
+            z-index: 9999;
         }
 
         #slide-menu ul {
@@ -107,8 +129,7 @@
         }
 
         #slide-menu ul li a {
-            padding-top: 10px;
-            color: rgb(7, 6, 6);
+            color: #fff;
             text-decoration: none;
         }
 
@@ -133,7 +154,6 @@
             font-size: 24px;
         }
 
-        /* For active state of menu */
         #menu-toggle.active + #slide-menu {
             left: 0;
         }
@@ -153,49 +173,140 @@
             object-fit: cover;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #750303;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        .footer nav {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .footer nav a {
+            color: #ffc107;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer nav a:hover {
+            text-decoration: underline;
+        }
+
+        .video-background video {
+            position: relative;
+            width: 100%;
+            height: auto;
+            padding-top: 10px;
+            object-fit: cover;
+        }
+
+        .phone-options-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .phone-icon {
+            width: 50px;
+            height: 50px;
+            background: #8B0000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .phone-options {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .phone-options a {
+            text-decoration: none;
+            color: #750303;
+            font-weight: bold;
+        }
+
+        .map {
+            margin-top: 20px;
+            width: 100%;
+            height: 300px;
+        }
+
+        @media (max-width: 768px) {
+            .footer .container {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Karan Mehndi Art</h1>
+        <h1><i class="fas fa-paint-brush"></i> Karan Mehndi Art</h1>
         <span id="menu-toggle">☰</span>
         <nav>
-            <a href="home.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="#gallery">Gallery</a>
-            <a href="contact.html">Contact</a>
+            <a href="home.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
         </nav>
     </header>
 
     <div id="slide-menu">
         <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><button id="book-now-button">Book Now</button></li>
+            <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><button id="book-now-button" class="btn" type="submit"><i class="fas fa-calendar-alt"></i> Book Now</button></li>
         </ul>
     </div>
 
     <div class="container">
-        <!-- Gallery Section -->
         <section id="gallery">
-            <h2>Gallery</h2>
-            <div class="gallery">
-                <img src="m2.jpg" alt="Tattoo Design 1">
-                <img src="m3.jpg" alt="Tattoo Design 2">
-                <img src="m4.jpg" alt="Tattoo Design 3">
-                <img src="m5.jpg" alt="Tattoo Design 4">
-                <img src="m6.jpg" alt="Tattoo Design 5">
-                <img src="m7.jpg" alt="Tattoo Design 6">
-                <img src="m8.jpg" alt="Tattoo Design 7">
-                <img src="m9.jpg" alt="Tattoo Design 8">
+            <h2><i class="fas fa-smile"></i> Welcome to Karan's Mehndi Art</h2>
+            <div class="video-background">
+                <video autoplay muted loop playsinline>
+                    <source src="mehandi.mp4" type="video/mp4">
+                </video>
             </div>
         </section>
 
-        <!-- Booking Section -->
-        <h2>Book Your Mehndi Design</h2>
-        <form id="booking-form">
+        <h2><i class="fas fa-calendar-check"></i> Book Your Mehndi Design</h2>
+        <form action="https://formspree.io/f/mnnnbgpg" method="POST" id="booking-form">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
@@ -214,53 +325,58 @@
                 <option value="modern">Modern</option>
             </select>
 
-            <button type="submit">Submit Booking</button>
-        </form>
-
-        <!-- Contact Form Section -->
-        <h2>Contact Us</h2>
-        <form action="https://formspree.io/f/mnnnbgpg" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required><br><br>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Your email" required><br><br>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" placeholder="Your message" required></textarea><br><br>
-
-            <button type="submit">Send Message</button>
+            <button type="submit" id="book"><i class="fas fa-paper-plane"></i> Submit Booking</button>
         </form>
     </div>
 
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Karan Mehndi Art - All Rights Reserved.<br>Kisan Fashion Mall, Suchitra Kompally, Secunderabad and Hyderabad - 500067<br>Contact No - +91 81716 28118</p>
+            <div id="map" class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3050.469529125894!2d78.4931503146288!3d17.528520689990106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9e02d5555555%3A0xb93a57a3bc2d65b6!2sKisan%20Fashion%20Mall!5e0!3m2!1sen!2sin!4v1684240280048!5m2!1sen!2sin"
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <nav>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+                <a href="home.html"><i class="fas fa-concierge-bell"></i> Services</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            </nav>
+        </div>
+    </footer>
+
+    <div class="phone-options-container">
+        <div class="phone-icon" id="toggle-phone-options">
+            <i class="fas fa-phone-alt"></i>
+        </div>
+        <div class="phone-options" id="phone-options">
+            <a href="tel:+918171628118">Call: +91 81716 28118</a>
+            <a href="https://wa.me/918171628118" target="_blank">WhatsApp: +91 81716 28118</a>
+        </div>
+    </div>
+
     <script>
+        const phoneIcon = document.getElementById('toggle-phone-options');
+        const phoneOptions = document.getElementById('phone-options');
+
+        phoneIcon.addEventListener('click', () => {
+            const isVisible = phoneOptions.style.display === 'flex';
+            phoneOptions.style.display = isVisible ? 'none' : 'flex';
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!phoneOptions.contains(event.target) && !phoneIcon.contains(event.target)) {
+                phoneOptions.style.display = 'none';
+            }
+        });
+
         const menuToggle = document.getElementById('menu-toggle');
         const slideMenu = document.getElementById('slide-menu');
-        let menuOpen = false; // Flag to track the state of the menu
 
         menuToggle.addEventListener('click', () => {
-            menuOpen = !menuOpen;
-            if (menuOpen) {
-                slideMenu.style.left = "0px"; // Open the menu
-                menuToggle.classList.add('active');
-            } else {
-                slideMenu.style.left = "-250px"; // Close the menu
-                menuToggle.classList.remove('active');
-            }
-        });
-
-        // Close the menu when clicking anywhere outside of it
-        document.addEventListener('click', (event) => {
-            if (!slideMenu.contains(event.target) && !menuToggle.contains(event.target) && menuOpen) {
-                slideMenu.style.left = "-250px"; // Close the menu
-                menuToggle.classList.remove('active');
-                menuOpen = false;
-            }
-        });
-
-        // Prevent click event on the menu from closing it
-        slideMenu.addEventListener('click', (event) => {
-            event.stopPropagation();
+            menuToggle.classList.toggle('active');
+            slideMenu.style.left = menuToggle.classList.contains('active') ? '0' : '-100%';
         });
     </script>
 </body>
