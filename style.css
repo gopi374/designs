@@ -31,12 +31,12 @@ header {
 .sidebar a {
     color: white;
     text-decoration: none;
-    padding: 10px;
+    padding: 20px;
     border-radius: 4px;
 }
 
 .sidebar a:hover {
-    background-color: #8B4513;
+    background-color: #8B4913;
 }
 
 .sidebar.active {
@@ -47,7 +47,7 @@ header {
     position: fixed;
     top: 20px;
     left: 20px;
-    background-color: #8B4513;
+    background-color: #8B56513;
     color: white;
     border: none;
     padding: 10px 15px;
